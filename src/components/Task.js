@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { useDispatch } from "react-redux";
 import { toggleComplete,deleteTodo,editTask } from "../redux/todoSlice";
+//pour savoir si la tache est accompli ou non
 const TodoItem=({id,title,completed})=>{
     const dispatch=useDispatch();
     const handleCompleteClick=()=>{
@@ -27,7 +28,8 @@ const TodoItem=({id,title,completed})=>{
                    </input>
                    {title}
                 </span>
-                <button onClick={handleDeleteClick} className="bg-red-500 mt-2 p-2 rounded mb-3">Delete</button>
+                <button onClick={handleDeleteClick}//pour supprimer une tache
+                    className="bg-red-500 mt-2 p-2 rounded mb-3">Delete</button>
                     <button
                         onClick={() => {
                             setIsEdit(true);
@@ -35,6 +37,7 @@ const TodoItem=({id,title,completed})=>{
                         className="rounded bg-sky-400 p-2 pb-2 mt-2  mb-3"
                     >
                         Edit
+                            //button pour afficher un champ apres un click sur edit pour modifier une tache
                     </button>
                     {isEdit && (
                         <>
