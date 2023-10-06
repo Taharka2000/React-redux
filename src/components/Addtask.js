@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/todoSlice';
 const AddTodoForm = () => {
+	//fonction pour l'ajout des taches
     const[value,setValue]=useState()
     const dispatch=useDispatch();
     const onSubmit=(e)=>{
